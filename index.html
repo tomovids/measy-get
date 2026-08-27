@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Measy — Meal Planner</title>
+<meta name="description" content="Cheap weekly dinners, planned for you. Download Measy on the App Store.">
+<meta property="og:title" content="Measy — Meal Planner">
+<meta property="og:description" content="A full week of dinners from £25. Download Measy on the App Store.">
+<meta property="og:image" content="https://tomovids.github.io/measy-get/icon.png">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<style>
+  :root { --green: #099250; --green-deep: #067040; --ink: #111815; --muted: #5b6660; --soft: #EDFCF2; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #fff; color: var(--ink);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 100dvh; padding: 32px 24px calc(32px + env(safe-area-inset-bottom));
+    text-align: center; -webkit-font-smoothing: antialiased;
+  }
+  .icon { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 10px 30px rgba(9,146,80,.18); }
+  h1 { font-size: 34px; line-height: 1.08; font-weight: 800; letter-spacing: -.02em; margin-top: 22px; }
+  h1 em { font-style: italic; color: var(--green); }
+  p.sub { color: var(--muted); font-size: 17px; line-height: 1.4; margin-top: 12px; max-width: 320px; }
+  .cta {
+    display: inline-flex; align-items: center; gap: 12px; margin-top: 28px;
+    background: #000; color: #fff; text-decoration: none; border-radius: 14px;
+    padding: 14px 22px 14px 18px; font-size: 18px; font-weight: 600; letter-spacing: -.01em;
+  }
+  .cta small { display: block; font-size: 11px; font-weight: 500; opacity: .85; text-align: left; line-height: 1; }
+  .cta span { display: block; text-align: left; line-height: 1.1; font-size: 22px; }
+  .cta svg { width: 30px; height: 30px; fill: #fff; flex: none; }
+  .cta:active { transform: scale(.98); }
+
+  .help {
+    display: none; margin-top: 26px; width: 100%; max-width: 360px;
+    background: var(--soft); border: 1.5px solid #bfe8d0; border-radius: 16px; padding: 18px 18px 16px; text-align: left;
+  }
+  .help.show { display: block; }
+  .help h2 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+  .help ol { padding-left: 22px; font-size: 16px; line-height: 1.55; }
+  .help b { font-weight: 700; }
+  .dots { display: inline-block; font-weight: 800; letter-spacing: 1px; background: #fff; border: 1px solid #cfd8d2; border-radius: 6px; padding: 0 6px; }
+  .arrow { position: fixed; top: 6px; right: 14px; font-size: 44px; line-height: 1; display: none; animation: bob 1s ease-in-out infinite; }
+  .arrow.show { display: block; }
+  @keyframes bob { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+
+  .foot { margin-top: 34px; color: var(--muted); font-size: 13px; }
+  .foot a { color: var(--muted); }
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1512; color: #f2f5f3; }
+    p.sub, .foot, .foot a { color: #9aa79f; }
+    .help { background: #16241c; border-color: #245a3c; }
+    .dots { background: #0f1512; border-color: #3a4a40; }
+  }
+</style>
+</head>
+<body>
+  <div class="arrow" id="arrow">👆</div>
+
+  <img class="icon" src="icon.png" alt="Measy app icon" width="112" height="112">
+  <h1>your week.<br><em>deliciously sorted.</em></h1>
+  <p class="sub">A full week of cheap, tasty dinners — planned, priced and ready to shop.</p>
+
+  <a class="cta" id="cta" href="https://apps.apple.com/gb/app/measy-meal-planner/id6802489151">
+    <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+    <div><small>Download on the</small><span>App Store</span></div>
+  </a>
+
+  <div class="help" id="help">
+    <h2>Link not opening? 2 quick steps:</h2>
+    <ol>
+      <li>Tap the <span class="dots">•••</span> in the <b>top-right corner</b></li>
+      <li>Tap <b>“Open in browser”</b> (or “Open in Safari”)</li>
+    </ol>
+  </div>
+
+  <p class="foot">iPhone only for now · <a href="https://apps.apple.com/gb/app/measy-meal-planner/id6802489151">apps.apple.com</a></p>
+
+<script>
+(function () {
+  var https = 'https://apps.apple.com/gb/app/measy-meal-planner/id6802489151';
+  var itms  = 'itms-apps://apps.apple.com/gb/app/measy-meal-planner/id6802489151';
+  var ua = navigator.userAgent || '';
+  var inApp = /BytedanceWebview|TikTok|musical_ly|Instagram|FBAN|FBAV|Snapchat|Twitter/i.test(ua);
+  var ios = /iPhone|iPad|iPod/i.test(ua);
+  var help = document.getElementById('help');
+  var arrow = document.getElementById('arrow');
+  var cta = document.getElementById('cta');
+
+  // App Store Connect campaign attribution. PT is the provider token shown in
+  // App Store Connect > Analytics > Campaigns; ?from=ethan becomes the campaign name.
+  var PT = '';
+  var from = new URLSearchParams(location.search).get('from');
+  if (PT && from) {
+    var tag = '?pt=' + PT + '&ct=' + encodeURIComponent(from) + '&mt=8';
+    https += tag; itms += tag;
+  }
+
+  function showHelp() { help.classList.add('show'); arrow.classList.add('show'); }
+
+  if (inApp) {
+    // Inside TikTok/IG etc. the webview usually refuses the App Store handoff.
+    // Show the escape instructions straight away and still try the direct scheme on tap.
+    showHelp();
+    cta.href = itms;
+    cta.addEventListener('click', function () {
+      setTimeout(function () { if (!document.hidden) location.href = https; }, 700);
+    });
+  } else if (ios) {
+    // Real Safari: bounce straight to the App Store.
+    cta.href = https;
+    location.replace(https);
+  } else {
+    cta.href = https;
+  }
+})();
+</script>
+</body>
+</html>
