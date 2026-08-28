@@ -93,12 +93,11 @@
 
   // App Store Connect campaign attribution. PT is the provider token shown in
   // App Store Connect > Analytics > Campaigns; ?from=ethan becomes the campaign name.
-  var PT = '';
-  var from = new URLSearchParams(location.search).get('from');
-  if (PT && from) {
-    var tag = '?pt=' + PT + '&ct=' + encodeURIComponent(from) + '&mt=8';
-    https += tag; itms += tag;
-  }
+  var PT = '129235652';
+  // Default attribution is the brand account; ?from=ethan (etc.) overrides.
+  var from = new URLSearchParams(location.search).get('from') || 'measyappai';
+  var tag = '?pt=' + PT + '&ct=' + encodeURIComponent('tiktok-' + from) + '&mt=8';
+  https += tag; itms += tag;
 
   function showHelp() { help.classList.add('show'); arrow.classList.add('show'); }
 
